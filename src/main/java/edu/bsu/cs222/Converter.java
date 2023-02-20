@@ -5,8 +5,10 @@ public class Converter {
     public Converter(int numberToConvert) {
         this.RomanNumeralResult = convertIntToRomanNumeral(numberToConvert);
     }
-
-    public String convertIntToRomanNumeral(int numberToConvert) {
+    public String getRomanNumeralResult() {
+        return RomanNumeralResult;
+    }
+    private String convertIntToRomanNumeral(int numberToConvert) {
         RomanNumeral oneDigitRomanNumeral = new RomanNumeral();
         String convertedRomanNumeral = "";
         int[] romanNumerals = {1, 5, 10, 50, 100, 500, 1000};
@@ -27,8 +29,5 @@ public class Converter {
         }else if(numberToConvert>1000){
             return placeConverter.convertThousandsPlaceToRomanNumeral(numberToConvert);
         }return convertedRomanNumeral;
-    }
-    public String getRomanNumeralResult() {
-        return RomanNumeralResult;
     }
 }

@@ -95,4 +95,9 @@ public class RomanNumeralConverterTest {
         Converter converter = new Converter(4000);
         Assertions.assertEquals("Converter cannot work on this number", converter.getRomanNumeralResult());
     }
+    @Test
+    public void testNegativeIsOutOfBounds(){
+        Converter converter = new Converter(-10);
+        Assertions.assertEquals("Converter cannot work on this number", converter.getRomanNumeralResult());
+    }
 }

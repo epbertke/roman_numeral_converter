@@ -1,6 +1,6 @@
 package edu.bsu.cs222;
 public class DecimalPlaceConverter {
-    public String convertOnesPlaceToRomanNumerals(int numberToConvert){
+    protected String convertOnesPlaceToRomanNumerals(int numberToConvert){
         String onesNumeral = "";
         if(numberToConvert>=1&&numberToConvert<=3){
             onesNumeral= "I".repeat(numberToConvert);
@@ -12,7 +12,7 @@ public class DecimalPlaceConverter {
             onesNumeral="IX";
         }return onesNumeral;
     }
-    public String convertTensPlaceToRomanNumerals(int numberToConvert){
+    protected String convertTensPlaceToRomanNumerals(int numberToConvert){
         String tensNumeral = "";
         int onesToConvert = (numberToConvert%10);
         int tensToConvert = numberToConvert - onesToConvert;
@@ -27,7 +27,7 @@ public class DecimalPlaceConverter {
             tensNumeral="XC";
         }return tensNumeral+convertOnesPlaceToRomanNumerals(onesToConvert);
     }
-    public String convertHundredsPlaceToRomanNumerals(int numberToConvert){
+    protected String convertHundredsPlaceToRomanNumerals(int numberToConvert){
         String hundredsNumeral = "";
         int count = numberToConvert/100;
         int tensToConvert = (numberToConvert%100);
@@ -42,7 +42,7 @@ public class DecimalPlaceConverter {
             hundredsNumeral="CM";
         }return hundredsNumeral+convertTensPlaceToRomanNumerals(tensToConvert);
     }
-    public String convertThousandsPlaceToRomanNumeral(int numberToConvert) {
+    protected String convertThousandsPlaceToRomanNumeral(int numberToConvert) {
         String thousandsNumeral = "";
         int hundredsToConvert = numberToConvert%1000;
         if(numberToConvert==3000){

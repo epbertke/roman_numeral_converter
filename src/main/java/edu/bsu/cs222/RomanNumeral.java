@@ -1,6 +1,6 @@
 package edu.bsu.cs222;
 public class RomanNumeral {
-    public String convertSingleNumeral(int numberToConvert){
+    protected String convertSingleNumeral(int numberToConvert){
         String romanNumeral = "";
         switch (numberToConvert) {
             case 1 -> {
